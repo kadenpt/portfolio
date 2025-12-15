@@ -5,37 +5,61 @@ export const createShelf = () => {
   // Bottom panel
   const shelfGroup = new THREE.Group();
   const shelfBottomGeometry = new THREE.BoxGeometry(10, 1, 10);
-  const shelfBottomMaterial = new THREE.MeshStandardMaterial({ color: 0x592C0C });
+  const shelfBottomMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x592C0C,
+    roughness: 0.2,
+    metalness: 0.0
+  });
   const shelfBottom = new THREE.Mesh(shelfBottomGeometry, shelfBottomMaterial);
   shelfBottom.position.set(0, 0, 0);
 
   // Left panel
   const shelfLeftGeometry = new THREE.BoxGeometry(0.5, 10, 10);
-  const shelfLeftMaterial = new THREE.MeshStandardMaterial({ color: 0x592C0C });
+  const shelfLeftMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x592C0C,
+    roughness: 0.2,
+    metalness: 0.0
+  });
   const shelfLeft = new THREE.Mesh(shelfLeftGeometry, shelfLeftMaterial);
   shelfLeft.position.set(-4.75, 5, 0);
 
   // Right panel
   const shelfRightGeometry = new THREE.BoxGeometry(0.5, 10, 10);
-  const shelfRightMaterial = new THREE.MeshStandardMaterial({ color: 0x592C0C });
+  const shelfRightMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x592C0C,
+    roughness: 0.2,
+    metalness: 0.0
+  });
   const shelfRight = new THREE.Mesh(shelfRightGeometry, shelfRightMaterial);
   shelfRight.position.set(4.75, 5, 0);
 
   // Back panel
   const shelfBackGeometry = new THREE.BoxGeometry(10, 10, 0.5);
-  const shelfBackMaterial = new THREE.MeshStandardMaterial({ color: 0x592C0C });
+  const shelfBackMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x592C0C,
+    roughness: 0.2,
+    metalness: 0.0
+  });
   const shelfBack = new THREE.Mesh(shelfBackGeometry, shelfBackMaterial);
   shelfBack.position.set(0, 5, -4.75);
 
   // Middle shelf
   const shelfMiddleGeometry = new THREE.BoxGeometry(10, 0.5, 10);
-  const shelfMiddleMaterial = new THREE.MeshStandardMaterial({ color: 0x592C0C });
+  const shelfMiddleMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x592C0C,
+    roughness: 0.2,
+    metalness: 0.0
+  });
   const shelfMiddle = new THREE.Mesh(shelfMiddleGeometry, shelfMiddleMaterial);
   shelfMiddle.position.set(0, 5, 0);
 
   // Shelf top
   const shelfTopGeometry = new THREE.BoxGeometry(10, 0.5, 10);
-  const shelfTopMaterial = new THREE.MeshStandardMaterial({ color: 0x592C0C });
+  const shelfTopMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x592C0C,
+    roughness: 0.2,
+    metalness: 0.0
+  });
   const shelfTop = new THREE.Mesh(shelfTopGeometry, shelfTopMaterial);
   shelfTop.position.set(0, 10, 0);
 

@@ -31,8 +31,8 @@ export function createTable(options = {}) {
   const legGeometry = new THREE.BoxGeometry(legSize, legHeight, legSize);
   const legMaterial = new THREE.MeshStandardMaterial({ 
     color: legColor,
-    roughness: 0.7,
-    metalness: 0.1
+    roughness: 0.2,
+    metalness: 0.0
   });
 
   // Calculate corner positions based on table dimensions
@@ -60,8 +60,8 @@ export function createTable(options = {}) {
   const tabletopGeometry = new THREE.BoxGeometry(tableWidth, tableHeight, tableDepth);
   const tabletopMaterial = new THREE.MeshStandardMaterial({ 
     color: tabletopColor,
-    roughness: 0.6,
-    metalness: 0.1
+    roughness: 0.2,
+    metalness: 0.0
   });
   const tabletop = new THREE.Mesh(tabletopGeometry, tabletopMaterial);
   
@@ -91,6 +91,8 @@ export function createTable(options = {}) {
   const discArmHolderGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
   const discArmHolderMaterial = new THREE.MeshStandardMaterial({ 
     color: 0x333333,
+    roughness: 0.2,
+    metalness: 0.0
   });
   const discArmHolder = new THREE.Mesh(discArmHolderGeometry, discArmHolderMaterial);
   discArmHolder.castShadow = true;
@@ -102,6 +104,8 @@ export function createTable(options = {}) {
   const discArmGeometry = new THREE.BoxGeometry(2, 0.1, 0.1);
   const discArmMaterial = new THREE.MeshStandardMaterial({ 
     color: 0x333333,
+    roughness: 0.2,
+    metalness: 0.0
   });
   const discArm = new THREE.Mesh(discArmGeometry, discArmMaterial);
   discArm.castShadow = true;

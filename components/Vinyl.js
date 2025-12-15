@@ -8,7 +8,12 @@ export const createVinyl = (
 ) => {
 
   const geometry = new THREE.BoxGeometry(0.25, 4, 5);
-  const material = new THREE.MeshStandardMaterial({ color: color });
+  const material = new THREE.MeshPhongMaterial({ 
+    color: color, 
+    shininess: 100,
+    specular: 0xffffff,
+    side: THREE.DoubleSide
+  });
   const mesh = new THREE.Mesh(geometry, material);
   mesh.position.set(xpos, ypos, 0);
 
