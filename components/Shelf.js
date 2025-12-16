@@ -169,6 +169,10 @@ export const createShelf = () => {
   shelfLeft.castShadow = true;
 
   shelfGroup.add(spinningDisc);
+
+  // Store references for transitions / interactions
+  shelfGroup.userData.topVinyl = topVinyl;
+  shelfGroup.userData.shelfDisc = spinningDisc;
   shelfGroup.add(shelfBottom);
   shelfGroup.add(shelfLeft);
   shelfGroup.add(shelfRight);

@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 // Scene setup
 import { setupInitialScene, setupLighting } from './scenes/initialScene.js';
@@ -23,15 +22,12 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 document.body.appendChild(renderer.domElement);
 
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
-camera.position.set(0, 15, 30);
+camera.position.set(10, 20, 40);
+const initialTarget = new THREE.Vector3(2, 0, 0);
+camera.lookAt(initialTarget);
+camera.userData.lookTarget = initialTarget.clone();
 
 const scene = new THREE.Scene();
-
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.target.set(-10, 0, 0);
-controls.enableDamping = true;
-controls.dampingFactor = 0.05;
-controls.update();
 
 const hoverStates = {
   hoveredTable: null,
@@ -77,9 +73,9 @@ function setupInitialScreen() {
  */
 function setupInteractions() {
   // Create bound transition functions
-  const boundAboutMeTransition = () => transitionToAboutMeScene(scene, camera, controls, hoverStates, isTransitioning, table);
-  const boundProjectsTransition = () => transitionToProjectsScene(scene, camera, controls, hoverStates, isTransitioning);
-  const boundExperienceTransition = () => transitionToExperienceScene(scene, camera, controls, hoverStates, isTransitioning);
+  const boundAboutMeTransition = () => transitionToAboutMeScene(scene, camera, hoverStates, isTransitioning, table);
+  const boundProjectsTransition = () => transitionToProjectsScene(scene, camera, hoverStates, isTransitioning);
+  const boundExperienceTransition = () => transitionToExperienceScene(scene, camera, hoverStates, isTransitioning, shelf, table);
 
   // Create interaction handlers
   const onMouseMove = interactionDetection.createMouseMoveHandler(
@@ -160,7 +156,6 @@ function animate() {
     glow.scale.copy(shelfDisc.scale);
   }
 
-  controls.update();
   renderer.render(scene, camera);
 }
 

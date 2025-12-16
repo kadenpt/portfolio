@@ -4,9 +4,8 @@ import * as THREE from 'three';
  * Sets up the Projects scene
  * @param {THREE.Scene} scene - The Three.js scene
  * @param {THREE.PerspectiveCamera} camera - The camera
- * @param {OrbitControls} controls - The orbit controls
  */
-export function setupProjectsScene(scene, camera, controls, animateCameraToPosition) {
+export function setupProjectsScene(scene, camera, animateCameraToPosition) {
   // Set background
   scene.background = new THREE.Color(0x2d1b4e);
   
@@ -26,6 +25,6 @@ export function setupProjectsScene(scene, camera, controls, animateCameraToPosit
   const targetLookAt = new THREE.Vector3(0, 2.5, 0);
   
   // Smooth camera transition
-  animateCameraToPosition(camera, controls, targetPosition, targetLookAt);
+  animateCameraToPosition(camera, targetPosition, targetLookAt);
 }
 

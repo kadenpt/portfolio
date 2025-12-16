@@ -74,11 +74,9 @@ export function createTable(options = {}) {
 
   // Create spinning disc
   const spinningDiscGeometry = new THREE.RingGeometry(1, 3, 32);
-  const spinningDiscMaterial = new THREE.MeshPhongMaterial({ 
-    color: 0x000000, 
-    specular: 0xffffff,
-    side: THREE.DoubleSide,
-    shininess: 30,
+  const spinningDiscMaterial = new THREE.MeshStandardMaterial({ 
+    color: 0x000000,
+    side: THREE.DoubleSide
   });
   const spinningDisc = new THREE.Mesh(spinningDiscGeometry, spinningDiscMaterial);
   spinningDisc.castShadow = true;
@@ -115,7 +113,7 @@ export function createTable(options = {}) {
 
   // Translucent cover adjusted up right
   const translucentCoverGeometry = new THREE.BoxGeometry(8, 8, 0.1);
-  const translucentCoverMaterial = new THREE.MeshPhongMaterial({ 
+  const translucentCoverMaterial = new THREE.MeshStandardMaterial({ 
     color: 0xffffff,
     opacity: 0.7,
     transparent: true,
